@@ -1,94 +1,182 @@
 :root {
-    --bgcolor: #464062;
-    --gastly-background: #3a3434;
-    --gastly-border: #3b343b;
-    --gastly-eye-shadow: #d6d6d6;
-    --gastly-eye-color: #342E30;
-    --gastly-shine: #635759;
-    --gastly-size: 255px;
-    --custom-border: drop-shadow(5px 0 var(--gastly-border))
-      /* drop-shadow sirve para shadow en png*/
-      drop-shadow(0 5px 0 var(--gastly-border))
-      drop-shadow(5px 0 0 var(--gastly-border))
-      drop-shadow(-5px -5px var(--gastly-border));
-    --gastly-shape: polygon(65% 0, 90% 20%, 100% 45%, 90% 80%, 65% 100%, 35% 100%, 10% 80%, 0 45%, 10% 20%, 35% 0);
-    --gastly-eyes: polygon(0% 36%, 16% 0%, 43% 38%, 84% 57%, 81% 90%, 60% 100%, 25% 94%);
-  }
-  
-  html,
-  body,
-  .container {
-    height: 100vh;
-    background-color: var(--bgcolor);
-    display: flex;
-    justify-content: center; /*centrado en orizontal */
-    align-items: center; /*centrado en vertical */
-  }
-  
-  .pokemon-container {
-    width: var(--gastly-size);
-    height: var(--gastly-size);
-  }
-  
-  .gastly-container {
-    width: 100%;
-    height: 100%;
-    filter: var(--custom-border);
-  }
-  .gastly {
-    width: 100%;
-    height: 100%;
-    background: var(--gastly-shine);
-    overflow: hidden;
-    clip-path: var(--gastly-shape);
-  }
-  
-  .gastly-shadow {
-    width: 100%;
-    height: 100%;
-    background: var(--gastly-background);
-    overflow: hidden;
-    clip-path: var(--gastly-shape);
-    transform: translate(0, 20px) scale(1);
-  }
-  
-  .eyes-container {
-    position: absolute;
-    z-index: 5;
-    transform: translate(-9px, 55px);
-    filter: var(--custom-border);
-    display: flex;
-  }
-  
-  .eye-container{
-    width: 138px;
-    height: 130px;
-    background: var(--gastly-eye-shadow);
-    clip-path: var(--gastly-eyes);
-  }
-  
-  .right{
-    transform: scale(-1, 1);
-  }
-  
-  
-  .eye-shadow {
-    background: white;
-    width: 100%;
-    height: 100%;
-    clip-path: var(--gastly-shape);
-    transform: translate(0, -15px);
-  
-  }
-  
-  .eye-shadow::before{
-    position: absolute;
-    content: "";
-    display: block;
-    width: 6px;
-    height: 15px;
-    background: var(--gastly-eye-color);
-    transform: translate(83px, 85px);
-  }
-  
-  
+  --bgcolor: #464062;
+  --gastly-background: rgb(52, 48, 48);
+  --gastly-border: #3b343b;
+  --gastly-eye-shadow: #d6d6d6;
+  --gastly-eye-color: #342e30;
+  --gastly-shine: #635759;
+  --gastly-brow: #9f929b;
+  --gastly-size: 255px;
+  --custom-border: drop-shadow(5px 0 var(--gastly-border))
+    /* drop-shadow sirve para shadow en png*/
+    drop-shadow(0 5px 0 var(--gastly-border))
+    drop-shadow(5px 0 0 var(--gastly-border))
+    drop-shadow(-5px -5px var(--gastly-border));
+  --gastly-shape: polygon(
+    65% 0,
+    90% 20%,
+    100% 45%,
+    90% 80%,
+    65% 100%,
+    35% 100%,
+    10% 80%,
+    0 45%,
+    10% 20%,
+    35% 0
+  );
+  --gastly-inner-shape: polygon(
+    62% 0,
+    97% 20%,
+    100% 45%,
+    90% 80%,
+    65% 100%,
+    35% 100%,
+    10% 80%,
+    0 45%,
+    4% 20%,
+    38% 0
+  );
+  --gastly-eyes: polygon(
+    0% 36%,
+    16% 0%,
+    43% 38%,
+    84% 57%,
+    81% 90%,
+    60% 100%,
+    25% 94%
+  );
+}
+
+html,
+body,
+.container {
+  height: 100vh;
+  background-color: var(--bgcolor);
+  display: flex;
+  justify-content: center; /*centrado en orizontal */
+  align-items: center; /*centrado en vertical */
+}
+
+.pokemon-container {
+  width: var(--gastly-size);
+  height: var(--gastly-size);
+}
+
+.gastly-container {
+  width: 100%;
+  height: 100%;
+  filter: var(--custom-border);
+}
+.gastly {
+  width: 100%;
+  height: 100%;
+  background: var(--gastly-shine);
+  overflow: hidden;
+  clip-path: var(--gastly-shape);
+}
+
+.gastly-shadow {
+  width: 100%;
+  height: 100%;
+  background: var(--gastly-background);
+  overflow: hidden;
+  clip-path: var(--gastly-inner-shape);
+  transform: translate(0, 16px) scale(1);
+}
+
+.eyes-container {
+  position: absolute;
+  z-index: 5;
+  transform: translate(-9px, 55px);
+  filter: var(--custom-border);
+  display: flex;
+}
+
+.eye-container {
+  width: 138px;
+  height: 130px;
+  background: var(--gastly-eye-shadow);
+  clip-path: var(--gastly-eyes);
+}
+
+.right {
+  transform: scale(-1, 1);
+}
+
+.eye-shadow {
+  background: white;
+  width: 100%;
+  height: 100%;
+  clip-path: var(--gastly-shape);
+  transform: translate(0, -15px);
+}
+
+.eye-shadow::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 6px;
+  height: 15px;
+  background: var(--gastly-eye-color);
+  transform: translate(83px, 85px);
+}
+
+.brows-container {
+  position: absolute;
+  transform: translate(104px, 104px);
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  width: 49px;
+}
+
+.brow {
+  width: 7px;
+  height: 26px;
+  background: var(--gastly-brow);
+  clip-path: polygon(0 0, 100% 60%, 50% 100%, 0 100%, 50% 60%);
+}
+
+.mouth-container {
+  position: absolute;
+  transform: translate(92px, 188px);
+}
+
+.mouth {
+  width: 75px;
+  height: 25px;
+  background: var(--gastly-brow);
+  clip-path: polygon(
+    0 0,
+    20% 30%,
+    80% 30%,
+    100% 0,
+    100% 50%,
+    80% 80%,
+    50% 100%,
+    20% 80%,
+    0% 50%
+  );
+}
+
+.fangs-container {
+  position: absolute;
+  transform: translate(78px, 188px);
+  display: flex;
+  justify-content: space-around;
+  width: 95px;
+}
+
+.fang {
+  width: 17px;
+  height: 35px;
+  background-color: white;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform: translate(-11px, 2px) scale(-1, 1) rotate(-21deg);
+}
+
+
+.fangs-container > .right {
+  transform: translate(16px, 3PX) scale(-1, 1) rotate(16deg);
+}
+
